@@ -15,14 +15,14 @@ import os
 import environ
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+BASE_DIR = environ.Path(__file__)-2
 
 # read env file
-env = environ.Env(DEBUG=(bool,False))
+env = environ.Env()
 env.read_env(os.path.join(BASE_DIR,'.env'))
 
 SECRET_KEY = env('SECRET_KEY')
-DEBUG = env('DEBUG')
+DEBUG = env.bool('DEBUG', False)
 ALLOWED_HOSTS = []
 
 
