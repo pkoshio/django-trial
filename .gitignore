@@ -4,3 +4,4 @@
 mysql/*
 src/.env
 .vscode
+static/polls/images/*
