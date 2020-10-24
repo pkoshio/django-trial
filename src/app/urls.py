@@ -18,6 +18,10 @@ from django.urls import include, path
 
 import polls
 
+# set admin
+admin.site.site_title = 'Polls site admin'
+admin.site.site_header = 'Polls administration'
+
 urlpatterns = [
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
